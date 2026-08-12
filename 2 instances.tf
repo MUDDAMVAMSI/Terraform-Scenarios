@@ -42,10 +42,11 @@ resource "aws_instance" "singapore" {
 # Understand the important part
 
 You have two provider configurations:
-
+```
 provider "aws" {
   region = "ap-south-1"
 }
+```
 
 This is the default provider.
 
