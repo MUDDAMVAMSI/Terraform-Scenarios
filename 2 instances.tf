@@ -1,0 +1,71 @@
+## write a Terraform code create 2 instances in 2 regions  
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+    }
+  }
+}
+
+# Region 1 - Mumbai
+provider "aws" {
+  region = "ap-south-1"
+}
+
+# Region 2 - Singapore
+provider "aws" {
+  alias  = "singapore"
+  region = "ap-southeast-1"
+}
+
+# EC2 instance in Mumbai
+resource "aws_instance" "mumbai" {
+  ami           = "ami-xxxxxxxx"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "Mumbai-Server"
+  }
+}
+
+# EC2 instance in Singapore
+resource "aws_instance" "singapore" {
+  provider      = aws.singapore
+  ami           = "ami-yyyyyyyy"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "Singapore-Server"
+  }
+}
+
+# Understand the important part
+
+You have two provider configurations:
+
+provider "aws" {
+  region = "ap-south-1"
+}
+
+This is the default provider.
+
+So this resource:
+
+resource "aws_instance" "mumbai" {
+
+}
+
+automatically uses Mumbai.
+
+# The second provider has an alias:
+
+provider "aws" {
+  alias  = "singapore"
+  region = "ap-southeast-1"
+}
+
+# Therefore, you explicitly tell the second EC2:
+
+provider = aws.singapore
+
+
