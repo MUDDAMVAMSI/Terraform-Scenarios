@@ -38,6 +38,9 @@ resource "aws_instance" "singapore" {
   tags = {
     Name = "Singapore-Server"
   }
+  lifecycle {
+  ignore_changes = all
+  }
 }
 
 ```
