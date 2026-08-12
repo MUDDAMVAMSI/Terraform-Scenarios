@@ -53,7 +53,7 @@ You have two provider configurations:
 
 ```bash
 provider "aws" {
-  region = "ap-south-1"
+  region = "us-east-1"
 }
 ```
 
@@ -62,7 +62,7 @@ This is the default provider.
 So this resource:
 
 ```
-resource "aws_instance" "mumbai" {
+resource "aws_instance" "us_east_1" {
 
 }
 ```
@@ -72,22 +72,22 @@ automatically uses Mumbai.
 # The second provider has an alias:
 ```bash
 provider "aws" {
-  alias  = "singapore"
-  region = "ap-southeast-1"
+  alias  = "us_west_1"
+  region = "us-west-1"
 }
 ```
 # Therefore, you explicitly tell the second EC2:
 
 ```bash 
-provider = aws.singapore
+provider      = aws.us_west_1
 ```
 
 
 # Create 3 instances in Region 2 with different names
 
 ```bash
-resource "aws_instance" "singapore" {
-  provider = aws.singapore
+resource "aws_instance" "us_west_1" {
+  provider      = aws.us_west_1
 
   count = 3
 
