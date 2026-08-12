@@ -39,6 +39,8 @@ resource "aws_instance" "singapore" {
     Name = "Singapore-Server"
   }
   lifecycle {
+  create_before_destroy = true
+  prevent_destroy = true
   ignore_changes = all
   }
 }
