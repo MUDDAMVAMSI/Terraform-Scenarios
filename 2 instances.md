@@ -51,7 +51,7 @@ provider "aws" {
 }
 ```
 
-# This is the default provider.
+This is the default provider.
 
 So this resource:
 
@@ -75,5 +75,25 @@ provider "aws" {
 ```bash 
 provider = aws.singapore
 ```
+
+
+# Create 3 instances in Region 2 with different names
+
+```bash
+resource "aws_instance" "singapore" {
+  provider = aws.singapore
+
+  count = 3
+
+  ami           = "ami-yyyyyyyy"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "Instance-${count.index + 1}"
+  }
+}
+```
+
+
 
 
