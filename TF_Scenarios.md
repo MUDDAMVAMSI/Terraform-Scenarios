@@ -102,19 +102,13 @@ resource "aws_instance" "us_west_1" {
 
 # Result
 ```
-Singapore (ap-southeast-1)
+us_west_1
 │
 ├── Instance-1
 ├── Instance-2
 └── Instance-3
 ```
 
-Terraform resources will be:
-```
 
-aws_instance.singapore[0] → Instance-1
-aws_instance.singapore[1] → Instance-2
-aws_instance.singapore[2] → Instance-3
-```
 
 
