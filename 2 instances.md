@@ -1,4 +1,5 @@
 ## write a Terraform code create 2 instances in 2 regions  
+```bash
 terraform {
   required_providers {
     aws = {
@@ -39,33 +40,40 @@ resource "aws_instance" "singapore" {
   }
 }
 
+```
 # Understand the important part
 
 You have two provider configurations:
 
+```bash
 provider "aws" {
   region = "ap-south-1"
 }
+```
 
-This is the default provider.
+# This is the default provider.
 
 So this resource:
 
+```
 resource "aws_instance" "mumbai" {
 
 }
+```
 
 automatically uses Mumbai.
 
 # The second provider has an alias:
-
+```bash
 provider "aws" {
   alias  = "singapore"
   region = "ap-southeast-1"
 }
-
+```
 # Therefore, you explicitly tell the second EC2:
 
+```bash 
 provider = aws.singapore
+```
 
 
