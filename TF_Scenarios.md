@@ -3,45 +3,46 @@
 terraform {
   required_providers {
     aws = {
-      source  = "hashicorp/aws"
+      source = "hashicorp/aws"
     }
   }
 }
 
-# Region 1 - Mumbai
+# Region 1 - US East 1
 provider "aws" {
-  region = "ap-south-1"
+  region = "us-east-1"
 }
 
-# Region 2 - Singapore
+# Region 2 - US West 1
 provider "aws" {
-  alias  = "singapore"
-  region = "ap-southeast-1"
+  alias  = "us_west_1"
+  region = "us-west-1"
 }
 
-# EC2 instance in Mumbai
-resource "aws_instance" "mumbai" {
+# EC2 instance in US East 1
+resource "aws_instance" "us_east_1" {
   ami           = "ami-xxxxxxxx"
   instance_type = "t2.micro"
 
   tags = {
-    Name = "Mumbai-Server"
+    Name = "US-East-1-Server"
   }
 }
 
-# EC2 instance in Singapore
-resource "aws_instance" "singapore" {
-  provider      = aws.singapore
+# EC2 instance in US West 1
+resource "aws_instance" "us_west_1" {
+  provider      = aws.us_west_1
   ami           = "ami-yyyyyyyy"
   instance_type = "t2.micro"
 
   tags = {
-    Name = "Singapore-Server"
+    Name = "US-West-1-Server"
   }
+
   lifecycle {
-  create_before_destroy = true
-  prevent_destroy = true
-  ignore_changes = all
+    create_before_destroy = true
+    prevent_destroy       = true
+    ignore_changes       = all
   }
 }
 
