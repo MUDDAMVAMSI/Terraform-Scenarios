@@ -42,7 +42,7 @@ resource "aws_instance" "singapore" {
 # Understand the important part
 
 You have two provider configurations:
-```
+```bash
 provider "aws" {
   region = "ap-south-1"
 }
