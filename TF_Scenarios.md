@@ -46,6 +46,7 @@ resource "aws_instance" "us_west_1" {
   }
 }
 
+# "ignore_changes = [tags] -->tells Terraform to ignore only tag modifications while continuing to monitor other attributes. W ignore_changes = all --> tells Terraform to ignore changes to all resource attributes after creation."
 ```
 # Understand the important part
 
