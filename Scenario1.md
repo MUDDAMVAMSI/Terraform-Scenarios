@@ -23,10 +23,11 @@ resource "aws_instance" "web" {
 # What happens?
 
 Terraform creates three EC2 instances:
-Resource	Instance name
-aws_instance.web[0]	web-server-0
-aws_instance.web[1]	web-server-1
-aws_instance.web[2]	web-server-2
+| Resource | Instance name |
+|---|---|
+| `aws_instance.web[0]` | web-server-0 |
+| `aws_instance.web[1]` | web-server-1 |
+| `aws_instance.web[2]` | web-server-2 |
 
 # 2. Using for_each
 
@@ -55,10 +56,12 @@ resource "aws_instance" "web" {
 # What happens?
 
 Terraform creates three EC2 instances:
-Instance	Instance type
-dev	       t2.micro
-test	   t2.small
-prod	   t2.medium
+
+| Instance | Instance type |
+|---|---|
+| dev | t2.micro |
+| test | t2.small |
+| prod | t2.medium |
 
 Terraform identifies them using keys:
 

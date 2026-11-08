@@ -25,6 +25,7 @@ resource "aws_instance" "my_instance" {
 
 Terraform creates two EC2 instances:
 
-Terraform resource	EC2 Name tag
-my_instance["web-server"]	web-server
-my_instance["app-server"]	app-server
+| Resource name | EC2 instance Name tag |
+|---|---|
+| `my_instance["web-server"]` | web-server |
+| `my_instance["app-server"]` | app-server |
