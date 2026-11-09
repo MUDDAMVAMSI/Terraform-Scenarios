@@ -54,7 +54,7 @@ resource "aws_instance" "us_west_1" {
 
 You have two provider configurations:
 
-```bash
+```hcl
 provider "aws" {
   region = "us-east-1"
 }
@@ -73,7 +73,7 @@ resource "aws_instance" "us_east_1" {
 automatically uses Mumbai.
 
 # The second provider has an alias:
-```bash
+```hcl
 provider "aws" {
   alias  = "us_west_1"
   region = "us-west-1"
@@ -81,14 +81,14 @@ provider "aws" {
 ```
 # Therefore, you explicitly tell the second EC2:
 
-```bash 
+```hcl
 provider      = aws.us_west_1
 ```
 
 
 # Create 3 instances in Region 2 with different names
 
-```bash
+```hcl
 resource "aws_instance" "us_west_1" {
   provider      = aws.us_west_1
 
