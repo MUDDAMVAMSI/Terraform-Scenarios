@@ -20,7 +20,7 @@ resource "aws_s3_bucket" "my_bucket" {
 resource "aws_s3_bucket_versioning" "my_bucket_versioning" {
   for_each = var.bucket_names
 
-  bucket = aws_s3_bucket.my_bucket[each.key].id
+  bucket = aws_s3_bucket.my_bucket[each.key].id # [REMEMBER]
 
   versioning_configuration {
     status = "Enabled"
@@ -49,7 +49,7 @@ resource "aws_s3_bucket" "my_bucket" {
 resource "aws_s3_bucket_versioning" "my_bucket_versioning" {
   for_each = var.bucket_names
 
-  bucket = aws_s3_bucket.my_bucket[each.key].id
+  bucket = aws_s3_bucket.my_bucket[each.key].id # [REMEMBER]
 
   versioning_configuration {
     status = contains(["dev", "test", "prod"], each.key) ? "Enabled" : "Suspended"
