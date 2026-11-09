@@ -56,7 +56,7 @@ resource "aws_s3_bucket_versioning" "my_bucket_versioning" {
   }
 }
 ```
-#Ternary Operator
+# Ternary Operator
 
 "We use a conditional or ternary operator in Terraform. It checks a condition and assigns one value if the condition is true and another value if it is false."
 
