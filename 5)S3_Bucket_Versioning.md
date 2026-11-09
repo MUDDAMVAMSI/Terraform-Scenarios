@@ -1,6 +1,6 @@
 # How do you enable versioning  for all the buckets?
 
-```bash
+```hcl
 variable "bucket_names" {
   default = {
     dev    = "company-dev-bucket"
@@ -29,7 +29,7 @@ resource "aws_s3_bucket_versioning" "my_bucket_versioning" {
 ```
 
 # Now enable for 3 instances for disable for remaining 2 ?
-```bash
+```hcl
 variable "bucket_names" {
   default = {
     dev    = "company-dev-bucket"
@@ -60,7 +60,7 @@ resource "aws_s3_bucket_versioning" "my_bucket_versioning" {
 
 "We use a conditional or ternary operator in Terraform. It checks a condition and assigns one value if the condition is true and another value if it is false."
 
-```bash
+```hcl
 condition ? value_if_true : value_if_false
 ```
 
