@@ -3,7 +3,7 @@
 We can create multiple EC2 instances using the same Terraform configuration file by using count or for_each.
 
 These features help us avoid writing separate resource blocks for each EC2 instance.
-
+# How do you create 3 instances using terraform ?
 # Real-time scenario: If a project requires three identical EC2 instances for an application, we can use count = 3.
 
 # 1. Using count : 
