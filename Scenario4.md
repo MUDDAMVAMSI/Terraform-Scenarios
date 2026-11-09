@@ -32,9 +32,9 @@ resource "aws_s3_bucket" "my_bucket" {
 | `aws_s3_bucket.my_bucket[4]` | vamsi-demo-bucket-4 |
 
 # Tags are not used here and even not required:
-Tags are key-value pairs used to identify and organize AWS resources. In production, we use tags for environment identification, cost allocation, ownership tracking and automation. 
-
-For example, we use Environment=Dev, Owner=Team-A and Project=E-Commerce."
+-Tags are key-value pairs used to identify and organize AWS resources. 
+-In production, we use tags for environment identification, cost allocation, ownership tracking and automation. 
+-For example, we use Environment=Dev, Owner=Team-A and Project=E-Commerce."
 
 # 3. Using varibles 
 
