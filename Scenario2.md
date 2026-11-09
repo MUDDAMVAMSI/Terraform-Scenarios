@@ -1,4 +1,4 @@
-# I want to create 2 instances with differenct names:
+# Using toset
 
 ```bash
 provider "aws" {
