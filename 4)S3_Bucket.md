@@ -1,6 +1,6 @@
 # 1.  How can you create an S3 bucket using Terraform?
 
-```bash
+```hcl
 provider "aws" {
   region = "ap-south-1"
 }
@@ -11,7 +11,7 @@ resource "aws_s3_bucket" "my_bucket" {
 ```
 # 2. Using count for creating 5 buckets
 
-```bash
+```hcl
 provider "aws" {
   region = "ap-south-1"
 }
@@ -40,7 +40,7 @@ resource "aws_s3_bucket" "my_bucket" {
 
 # 3. Using varibles 
 
-```bash
+```hcl
 variable "bucket_names" {
   default = {
     dev    = "company-dev-bucket"
@@ -76,7 +76,7 @@ Remember:
 
 To convert a list into a set of unique values.
 
-```bash
+```hcl
 variable "bucket_names" {
   default = [
     "vamsi-dev-bucket-101",
