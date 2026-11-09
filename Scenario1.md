@@ -34,7 +34,7 @@ Terraform creates three EC2 instances:
 - The key pair is used for SSH access to Linux EC2 instances.
 - The private key must be available to the person connecting.
 - Without a key pair, you can still access instances using AWS Systems Manager Session Manager if configured.
-
+# How do you create 3 instances with different names using terraform ?
 # 2. Using for_each
 
 We use for_each when we want to create multiple instances with different configurations or names.
