@@ -31,7 +31,7 @@ resource "aws_instance" "us_east_1" {
 
 # EC2 instance in US West 1
 resource "aws_instance" "us_west_1" {
-  provider      = aws.us_west_1
+  provider      = aws.us_west_1  # [understand the difference ]
   ami           = "ami-yyyyyyyy"
   instance_type = "t2.micro"
 
