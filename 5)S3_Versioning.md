@@ -56,6 +56,14 @@ resource "aws_s3_bucket_versioning" "my_bucket_versioning" {
   }
 }
 ```
+#Ternary Operator
+
+"We use a conditional or ternary operator in Terraform. It checks a condition and assigns one value if the condition is true and another value if it is false."
+
+```bash
+condition ? value_if_true : value_if_false
+```
+
 
 # Decode it bucket = aws_s3_bucket.my_bucket[each.key].id
 
