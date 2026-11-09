@@ -54,7 +54,7 @@ variable "bucket_names" {
 resource "aws_s3_bucket" "my_bucket" {
   for_each = var.bucket_names
 
-  bucket = each.value
+  bucket = each.value  # [DOUBT]
 
   tags = {
     Environment = each.key
