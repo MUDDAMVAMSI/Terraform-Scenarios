@@ -9,7 +9,7 @@ These features help us avoid writing separate resource blocks for each EC2 insta
 # 1. Using count : 
 
 The count meta-argument creates multiple instances of the same resource.
-```bash
+```hcl
 resource "aws_instance" "web" {
   count         = 3
   ami           = "ami-123456"
@@ -39,7 +39,7 @@ Terraform creates three EC2 instances:
 
 We use for_each when we want to create multiple instances with different configurations or names.
 
-```bash
+```hcl
 variable "instance_types" {
   default = {
     dev  = "t2.micro"
@@ -71,7 +71,7 @@ Terraform creates three EC2 instances:
 
 Terraform identifies them using keys:
 
-```bash
+```hcl
 aws_instance.web["dev"]
 aws_instance.web["test"]
 aws_instance.web["prod"]
