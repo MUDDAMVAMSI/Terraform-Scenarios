@@ -98,7 +98,7 @@ resource "aws_instance" "us_west_1" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "Instance-${count.index + 1}"
+    Name = "Instance-${count.index + 1}" # [see the difference above and here]
   }
 }
 ```
