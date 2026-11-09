@@ -29,6 +29,12 @@ Terraform creates three EC2 instances:
 | `aws_instance.web[1]` | web-server-1 |
 | `aws_instance.web[2]` | web-server-2 |
 
+# Why you not used key-pair?
+- key_name specifies the EC2 key pair.
+- The key pair is used for SSH access to Linux EC2 instances.
+- The private key must be available to the person connecting.
+- Without a key pair, you can still access instances using AWS Systems Manager Session Manager if configured.
+
 # 2. Using for_each
 
 We use for_each when we want to create multiple instances with different configurations or names.
