@@ -54,7 +54,7 @@ variable "bucket_names" {
 resource "aws_s3_bucket" "my_bucket" {
   for_each = var.bucket_names
 
-  bucket = each.value  # [DOUBT]
+  bucket = each.value  # [REMEMBER]
 
   tags = {
     Environment = each.key
@@ -86,7 +86,7 @@ variable "bucket_names" {
 }
 
 resource "aws_s3_bucket" "my_bucket" {
-  for_each = toset(var.bucket_names)
+  for_each = toset(var.bucket_names) #[Remember]
 
   bucket = each.value
 }
