@@ -1,5 +1,5 @@
 ## write a Terraform code create 2 instances in 2 regions  
-```bash
+```hcl
 terraform {
   required_providers {
     aws = {
