@@ -18,7 +18,7 @@ provider "aws" {
 
 resource "aws_s3_bucket" "my_bucket" {
   count = 5
-  bucket = "vamsi-demo-bucket-${count.index}"
+  bucket = "vamsi-demo-bucket-${count.index}" # {count.index+1}
 }
 ```
 # Output:
