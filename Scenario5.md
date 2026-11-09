@@ -56,3 +56,21 @@ resource "aws_s3_bucket_versioning" "my_bucket_versioning" {
   }
 }
 ```
+
+# Decode it bucket = aws_s3_bucket.my_bucket[each.key].id
+
+| Code | Meaning |
+|---|---|
+| `bucket` | Argument of the versioning resource |
+| `aws_s3_bucket` | Resource type |
+| `my_bucket` | S3 resource name |
+| `[each.key]` | Selects the matching S3 bucket using its key |
+| `.id` | Retrieves the ID of the selected S3 bucket |
+
+| Current key | Terraform evaluates |
+|---|---|
+| dev | `aws_s3_bucket.my_bucket["dev"].id` |
+| test | `aws_s3_bucket.my_bucket["test"].id` |
+| prod | `aws_s3_bucket.my_bucket["prod"].id` |
+| backup | `aws_s3_bucket.my_bucket["backup"].id` |
+| logs | `aws_s3_bucket.my_bucket["logs"].id` |
