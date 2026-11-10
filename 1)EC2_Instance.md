@@ -1,5 +1,14 @@
-## How will you create different instances with same terraform main.tf configuration file?
+## Create an instance using terraform?
+```hcl
+resource "aws_instance" "web" {
+  ami           = "ami-123456"
+  instance_type = "t2.micro"
 
+  tags = {
+    Name = "web-server"
+  }
+}
+```
 We can create multiple EC2 instances using the same Terraform configuration file by using count or for_each.
 
 These features help us avoid writing separate resource blocks for each EC2 instance.
