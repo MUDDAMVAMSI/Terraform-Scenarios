@@ -27,6 +27,7 @@ resource "aws_instance" "us_east_1" {
   tags = {
     Name = "US-East-1-Server"
   }
+
   lifecycle {
     create_before_destroy = true
     prevent_destroy       = true
