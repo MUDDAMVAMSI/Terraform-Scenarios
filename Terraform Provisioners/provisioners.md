@@ -52,7 +52,7 @@ resource "aws_instance" "web" {
   
 **Result:** Your local app.conf file is copied to /tmp/app.conf on EC2.
 
-2.**Remote-exec Provisioner**: Used to execute commands or scripts directly on a remote server.
+**2.Remote-exec Provisioner**: Used to execute commands or scripts directly on a remote server.
 
 Real-time scenario:
 
