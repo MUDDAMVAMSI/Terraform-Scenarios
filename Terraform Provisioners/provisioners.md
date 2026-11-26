@@ -87,7 +87,11 @@ resource "aws_instance" "web" {
 3. It executes the commands.
 4. Nginx gets installed and started.
 
-**Local-exec Provisioner:** Executes commands on the machine where Terraform is running, not on the EC2 instance.
+**Can we use something other than inline?**
+
+Yes! You can use script or scripts instead. "inline is an argument in the remote-exec provisioner that accepts multiple commands as a list. Terraform executes those commands sequentially on the remote machine through SSH."
+
+**3.Local-exec Provisioner:** Executes commands on the machine where Terraform is running, not on the EC2 instance.
 
 Real-time scenario:
 
