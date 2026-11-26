@@ -10,6 +10,7 @@ Suppose you create an EC2 instance using Terraform. The EC2 instance is created,
 - Copy application files.
 - Execute shell scripts.
 - Configure the server.
+  
 You can use Terraform Provisioners to perform these additional tasks.
 
 | Provisioner | Purpose |
